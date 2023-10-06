@@ -24,7 +24,6 @@ public class ColecaoProfessores {
         System.out.print("Disciplina do Professor: ");
         disciplina = scanner.nextLine();
         
-
         Professor professor = new Professor(nome, disciplina);
         professores.add(professor);
 
@@ -35,10 +34,11 @@ public class ColecaoProfessores {
 
     public void listarProfessores() {
         if(professores.size() == 0) {
-            System.out.println("Não há estudantes cadastrados!\n");
+            System.out.println("Não há professores cadastrados!\n");
         }
         
         for(Professor professor : professores) {
+            System.out.println("ID: " + professor.getId());
             System.out.println("Nome: " + professor.getNome());
             System.out.println("Disciplina: " + professor.getDisciplina());
             System.out.println("");
@@ -64,7 +64,7 @@ public class ColecaoProfessores {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante atualizado com sucesso!\n");
+        System.out.println("Professor atualizado com sucesso!\n");
     }
 
     public void removerProfessor() {
@@ -84,7 +84,7 @@ public class ColecaoProfessores {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante removido com sucesso!\n");
+        System.out.println("Professor removido com sucesso!\n");
     }
 
     public Professor buscarProfessorPorID(int idProfessor) {

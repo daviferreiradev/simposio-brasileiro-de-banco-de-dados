@@ -1,5 +1,5 @@
 public class Professor extends Pessoa {
-    private int proximoID = 1;
+    private static int proximoID = 0;
 
     private String disciplina;
 

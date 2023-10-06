@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class SessaoTecnica {
-    private static int proximoID = 1;
+    private static int proximoID = 0;
 
     private int codigo;
     private String data;
@@ -7,6 +9,7 @@ public class SessaoTecnica {
     private String horaFim;
     private Sala local;
     private Professor mediador;
+    private ArrayList<Apresentacao> apresentacoes = new ArrayList<>();
 
     public SessaoTecnica(String data, String horaInicio, String horaFim, Sala local, Professor mediador) {
         this.data = data;
@@ -15,6 +18,14 @@ public class SessaoTecnica {
         this.local = local;
         this.mediador = mediador;
         proximoID++;
+    }
+
+    public void adicionarApresentacao(Apresentacao apresentacao) {
+        apresentacoes.add(apresentacao);
+    }
+
+    public void removerApresentacao(Apresentacao apresentacao) {
+        apresentacoes.remove(apresentacao);
     }
 
     public int getCodigo() {

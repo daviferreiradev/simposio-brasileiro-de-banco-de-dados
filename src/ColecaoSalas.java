@@ -16,17 +16,15 @@ public class ColecaoSalas {
     }
 
     public void adicionarSala() {
-        int predio, andar, numSala;
+        int predio, numSala;
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Prédio da Sala: ");
         predio = scanner.nextInt();
-        System.out.print("Andar da Sala: ");
-        andar = scanner.nextInt();
         System.out.print("Sala: ");
         numSala = scanner.nextInt();
 
-        Sala sala = new Sala(predio, andar, numSala);
+        Sala sala = new Sala(predio, numSala);
         salas.add(sala);
 
         System.out.print("\033[H\033[2J"); // Limpa o console
@@ -40,9 +38,9 @@ public class ColecaoSalas {
         }
         
         for(Sala sala : salas) {
+            System.out.println("Código: " + sala.getCodigo());
             System.out.println("Prédio: " + sala.getPredio());
-            System.out.println("Andar: " + sala.getAndar());
-            System.out.println("Sala: " + sala.getSala());
+            System.out.println("Sala: " + sala.getNumero());
             System.out.println("");
         }
     }
@@ -56,22 +54,18 @@ public class ColecaoSalas {
 
         for(Sala sala : salas) {
             if(sala.getCodigo() == cod) {
-                int predio, andar, numSala;
+                int predio, numSala;
 
                 System.out.print("Prédio da Sala: ");
                 predio = scanner.nextInt();
-                System.out.print("Andar da Sala: ");
-                andar = scanner.nextInt();
                 System.out.print("Sala: ");
                 numSala = scanner.nextInt();
 
                 sala.setPredio(predio);
-                sala.setAndar(andar);
-                sala.setSala(numSala);
+                sala.setNumero(numSala);
                 break;
             }
         }
-        
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
@@ -82,9 +76,8 @@ public class ColecaoSalas {
         int cod;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Matrícula do Estudante: ");
+        System.out.print("Código da Sala: ");
         cod = scanner.nextInt();
-
 
         for(Sala sala : salas) {
             if(sala.getCodigo() == cod) {
@@ -95,7 +88,7 @@ public class ColecaoSalas {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante removido com sucesso!\n");
+        System.out.println("Sala removida com sucesso!\n");
     }
 
     public Sala buscarSalaPorID(int idSala) {

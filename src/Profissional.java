@@ -1,5 +1,5 @@
 public class Profissional extends Pessoa {
-    private int proximoCodigo = 1;
+    private int proximoCodigo = 0;
     // private MiniCurso miniCurso;
 
     public Profissional(String nome) {

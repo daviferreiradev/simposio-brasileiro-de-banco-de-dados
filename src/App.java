@@ -284,10 +284,11 @@ public class App {
                     System.out.print("\033[H\033[2J"); // Limpa o console
                     System.out.flush();
                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS *****");
-                    System.out.println("1 - Sessoes Tecnicas");
-                    System.out.println("2 - Apresentacoes");
-                    System.out.println("3 - Trabalhos");
-                    System.out.println("4 - Salas");
+                    System.out.println("1 - Minicursos");
+                    System.out.println("2 - Sessoes Tecnicas");
+                    System.out.println("3 - Apresentacoes");
+                    System.out.println("4 - Trabalhos");
+                    System.out.println("5 - Salas");
                     System.out.println("0 - Sair");
                     System.out.print("Digite a opcao desejada: ");
                     
@@ -296,11 +297,62 @@ public class App {
                         case 1:
                             System.out.print("\033[H\033[2J"); // Limpa o console
                             System.out.flush();
+                            System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // MINICURSOS *****");
+                            System.out.println("1 - Cadastrar");
+                            System.out.println("2 - Adicionar Participante");
+                            System.out.println("3 - Listar");
+                            System.out.println("4 - Atualizar");
+                            System.out.println("5 - Remover");
+                            System.out.println("0 - Sair");
+                            System.out.print("Digite a opcao desejada: ");
+                            choice = scanner.nextInt();
+                            switch(choice) {
+                                case 1:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // CADASTRAR *****");
+                                    ColecaoMiniCurso.getInstance().adicionarMiniCurso();
+                                    break;
+                                case 2:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // ADICIONAR PARTICIPANTE *****");
+                                    ColecaoMiniCurso.getInstance().adicionarParticipante();
+                                    break;
+                                case 3:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // LISTAR *****");
+                                    ColecaoMiniCurso.getInstance().listarMiniCurso();
+                                    break;
+                                case 4:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // ATUALIZAR *****");
+                                    ColecaoMiniCurso.getInstance().atualizarMiniCurso();
+                                    break;
+                                case 5:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // REMOVER *****");
+                                    ColecaoMiniCurso.getInstance().removerMiniCurso();
+                                    break;
+                                default:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("Opção inválida");
+                                    break;
+                            }   
+                            break;
+                        case 2:
+                            System.out.print("\033[H\033[2J"); // Limpa o console
+                            System.out.flush();
                             System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS *****");
                             System.out.println("1 - Cadastrar");
-                            System.out.println("2 - Listar");
-                            System.out.println("3 - Atualizar");
-                            System.out.println("4 - Remover");
+                            System.out.println("2 - Adicionar Apresentacao");
+                            System.out.println("3 - Listar");
+                            System.out.println("4 - Atualizar");
+                            System.out.println("5 - Remover");
                             System.out.println("0 - Sair");
                             System.out.print("Digite a opcao desejada: ");
                             choice = scanner.nextInt();
@@ -314,16 +366,22 @@ public class App {
                                 case 2:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // ADICIONAR APRESENTACAO *****");
+                                    ColecaoSessoesTecnicas.getInstance().adicionarApresentacao();
+                                    break;
+                                case 3:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // LISTAR *****");
                                     ColecaoSessoesTecnicas.getInstance().listarSessoesTecnicas();
                                     break;
-                                case 3:
+                                case 4:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // ATUALIZAR *****");
                                     ColecaoSessoesTecnicas.getInstance().atualizarSessaoTecnica();
                                     break;
-                                case 4:
+                                case 5:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SESSOES TECNICAS // REMOVER *****");
@@ -336,7 +394,7 @@ public class App {
                                     break;
                             }   
                             break;
-                        case 2:
+                        case 3:
                             System.out.print("\033[H\033[2J"); // Limpa o console
                             System.out.flush();
                             System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // APRESENTACOES *****");
@@ -352,25 +410,25 @@ public class App {
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // APRESENTACOES // CADASTRAR *****");
-                                    ColecaoSessoesTecnicas.getInstance().adicionarSessaoTecnica();
+                                    ColecaoApresentacoes.getInstance().adicionarApresentacao();
                                     break;
                                 case 2:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // APRESENTACOES // LISTAR *****");
-                                    ColecaoSessoesTecnicas.getInstance().listarSessoesTecnicas();
+                                    ColecaoApresentacoes.getInstance().listarApresentacoes();
                                     break;
                                 case 3:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // APRESENTACOES // ATUALIZAR *****");
-                                    ColecaoSessoesTecnicas.getInstance().atualizarSessaoTecnica();
+                                    ColecaoApresentacoes.getInstance().atualizarApresentacao();
                                     break;
                                 case 4:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // APRESENTACOES // REMOVER *****");
-                                    ColecaoSessoesTecnicas.getInstance().removerSessaoTecnica();
+                                    ColecaoApresentacoes.getInstance().removerApresentacao();
                                     break;
                                 default:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
@@ -379,7 +437,7 @@ public class App {
                                     break;
                             }   
                             break;
-                        case 3:
+                        case 4:
                             System.out.print("\033[H\033[2J"); // Limpa o console
                             System.out.flush();
                             System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // TRABALHOS *****");
@@ -423,7 +481,7 @@ public class App {
                             }   
                             break;
 
-                        case 4:
+                        case 5:
                             System.out.print("\033[H\033[2J"); // Limpa o console
                             System.out.flush();
                             System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // EVENTOS // SALAS *****");

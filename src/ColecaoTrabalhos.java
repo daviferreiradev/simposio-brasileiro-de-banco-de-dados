@@ -34,7 +34,7 @@ public class ColecaoTrabalhos {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante cadastrado com sucesso!\n");
+        System.out.println("Trabalho cadastrado com sucesso!\n");
     }
 
     public void listarTrabalhos() {
@@ -45,7 +45,7 @@ public class ColecaoTrabalhos {
         for(Trabalho trabalho : trabalhos) {
             System.out.println("Título: " + trabalho.getTitulo());
             System.out.println("Resumo: " + trabalho.getResumo());
-            System.out.println("Orientador: " + trabalho.getOrientador().getNome());
+            System.out.println("Professor/Orientador: " + trabalho.getOrientador().getNome());
             System.out.println("");
         }
     }
@@ -63,15 +63,20 @@ public class ColecaoTrabalhos {
                 trabalho.setTitulo(scanner.nextLine());
                 System.out.print("Resumo do Trabalho: ");
                 trabalho.setResumo(scanner.nextLine());
-                System.out.print("ID do Orientador: ");
-                trabalho.setOrientador(ColecaoProfessores.getInstance().buscarProfessorPorID(scanner.nextInt()));
+                try {
+                    System.out.print("ID do Orientador: ");
+                    int idOrientador = scanner.nextInt();
+                    trabalho.setOrientador(ColecaoProfessores.getInstance().buscarProfessorPorID(idOrientador));
+                } catch(Exception e) {
+                    System.out.println("ID inválido!");
+                }
                 break;
             }
         }
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante atualizado com sucesso!\n");
+        System.out.println("Trabalho atualizado com sucesso!\n");
     }
 
     public void removerTrabalho() {
@@ -90,6 +95,15 @@ public class ColecaoTrabalhos {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante removido com sucesso!\n");
+        System.out.println("Trabalho removido com sucesso!\n");
+    }
+
+    public Trabalho buscarTrabalhoPorCod(int cod) {
+        for(Trabalho trabalho : trabalhos) {
+            if(trabalho.getCod() == cod) {
+                return trabalho;
+            }
+        }
+        return null;
     }
 }

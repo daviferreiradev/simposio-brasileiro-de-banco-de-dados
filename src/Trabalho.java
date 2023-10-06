@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Trabalho {
-    private int proximoCod = 1;
+    private int proximoCod = 0;
     private String titulo;
     private String resumo;
     private Professor orientador;

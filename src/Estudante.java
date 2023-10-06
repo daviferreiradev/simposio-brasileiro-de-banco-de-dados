@@ -1,18 +1,18 @@
 public class Estudante extends Pessoa {
-    private String matricula;
+    private int matricula;
     private String curso;
 
-    public Estudante(String nome, String matricula, String curso) {
+    public Estudante(String nome, int matricula, String curso) {
         super(nome);
         this.matricula = matricula;
         this.curso = curso;
     }
 
-    public String getMatricula() {
+    public int getMatricula() {
         return this.matricula;
     }
 
-    public void setMatricula(String matricula) {
+    public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
 

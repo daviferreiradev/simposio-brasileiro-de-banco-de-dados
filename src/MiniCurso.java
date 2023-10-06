@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class MiniCurso {
-    private static int proximoID = 1;
+    private static int proximoID = 0;
     private String titulo;
     private String data;
     private String horaInicio;

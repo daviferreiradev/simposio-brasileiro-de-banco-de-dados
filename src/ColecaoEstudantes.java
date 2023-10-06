@@ -16,13 +16,15 @@ public class ColecaoEstudantes {
     }
 
     public void adicionarEstudante() {
-        String nome, matricula, curso;
+        String nome, curso;
+        int matricula;
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Nome do Estudante: ");
         nome = scanner.nextLine();
         System.out.print("Matrícula do Estudante: ");
-        matricula = scanner.nextLine();
+        matricula = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("Curso do Estudante: ");
         curso = scanner.nextLine();
 
@@ -48,18 +50,18 @@ public class ColecaoEstudantes {
     }
 
     public void atualizarEstudante() {
-        String matricula;
+        int matricula;
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Matrícula do Estudante: ");
-        matricula = scanner.nextLine();
+        matricula = scanner.nextInt();
 
         for(Estudante estudante : estudantes) {
-            if(estudante.getMatricula().equals(matricula)) {
+            if(estudante.getMatricula() == matricula) {
                 System.out.print("Nome do Estudante: ");
                 estudante.setNome(scanner.nextLine());
                 System.out.print("Matrícula do Estudante: ");
-                estudante.setMatricula(scanner.nextLine());
+                estudante.setMatricula(scanner.nextInt());
                 System.out.print("Curso do Estudante: ");
                 estudante.setCurso(scanner.nextLine());
                 break;
@@ -73,15 +75,15 @@ public class ColecaoEstudantes {
     }
 
     public void removerEstudante() {
-        String matricula;
+        int matricula;
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Matrícula do Estudante: ");
-        matricula = scanner.nextLine();
+        matricula = scanner.nextInt();
 
 
         for(Estudante estudante : estudantes) {
-            if(estudante.getMatricula().equals(matricula)) {
+            if(estudante.getMatricula() == matricula) {
                 estudantes.remove(estudante);
                 break;
             }
@@ -90,5 +92,14 @@ public class ColecaoEstudantes {
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
         System.out.println("Estudante removido com sucesso!\n");
+    }
+
+    public Estudante buscarEstudantePorMatricula(int matricula) {
+        for(Estudante estudante : estudantes) {
+            if(estudante.getMatricula() == matricula) {
+                return estudante;
+            }
+        }
+        return null;
     }
 }

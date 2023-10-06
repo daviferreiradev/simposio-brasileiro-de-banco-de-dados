@@ -39,7 +39,7 @@ public class ColecaoMiniCurso {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante cadastrado com sucesso!\n");
+        System.out.println("Mini Curso cadastrado com sucesso!\n");
     }
 
     public void listarMiniCurso() {
@@ -52,8 +52,11 @@ public class ColecaoMiniCurso {
             System.out.println("Data: " + miniCurso.getData());
             System.out.println("Hora de Início: " + miniCurso.getHoraInicio());
             System.out.println("Hora de Fim: " + miniCurso.getHoraFim());
-            System.out.println("Profissional: " + miniCurso.getProfissional());
-            System.out.println("Local: " + miniCurso.getLocal());
+            System.out.println("Local: Prédio " + miniCurso.getLocal().getPredio() + ", Sala " + miniCurso.getLocal().getNumero());
+            System.out.println("Profissional: " + miniCurso.getProfissional().getNome());
+            for(Pessoa participante : miniCurso.getParticipantes()) {
+                System.out.println("Participante: " + participante.getNome());
+            }
             System.out.println("");
         }
         
@@ -90,7 +93,7 @@ public class ColecaoMiniCurso {
         
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante atualizado com sucesso!\n");
+        System.out.println("Mini Curso atualizado com sucesso!\n");
     }
 
     public void removerMiniCurso() {
@@ -109,6 +112,46 @@ public class ColecaoMiniCurso {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante removido com sucesso!\n");
+        System.out.println("Mini Curso removido com sucesso!\n");
+    }
+
+    public void adicionarParticipante() {
+        int cod;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("ID do Mini Curso: ");
+        cod = scanner.nextInt();
+
+        for(MiniCurso miniCurso : miniCursos) {
+            if(miniCurso.getCodigo() == cod) {
+                System.out.println("QUal o tipo de participante?\n1 - Estudante\n2 - Professor\n3 - Profissional");
+                int tipoParticipante = scanner.nextInt();
+                switch(tipoParticipante) {
+                    case 1:
+                        System.out.print("ID do Estudante: ");
+                        int idEstudante = scanner.nextInt();
+                        Estudante estudante = ColecaoEstudantes.getInstance().buscarEstudantePorMatricula(idEstudante);
+                        miniCurso.getParticipantes().add(estudante);
+                        break;
+                    case 2:
+                        System.out.print("ID do Professor: ");
+                        int idProfessor = scanner.nextInt();
+                        Pessoa professor = ColecaoProfessores.getInstance().buscarProfessorPorID(idProfessor);
+                        miniCurso.getParticipantes().add(professor);
+                        break;
+                    case 3:
+                        System.out.print("ID do Profissional: ");
+                        int idProfissional = scanner.nextInt();
+                        Pessoa profissional = ColecaoProfissionais.getInstance().buscarProfissionalPorID(idProfissional);
+                        miniCurso.getParticipantes().add(profissional);
+                        break;
+                }
+                break;
+            }
+        }
+
+        System.out.print("\033[H\033[2J"); // Limpa o console
+        System.out.flush();
+        System.out.println("Participante adicionado com sucesso!\n");
     }
 }

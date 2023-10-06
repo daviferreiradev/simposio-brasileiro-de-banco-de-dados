@@ -1,14 +1,11 @@
 public class Sala {
-    private int proximoCodigo = 1;
+    private int proximoCodigo = 0;
     private int predio;
-    private int andar;
-    private int numSala;
+    private int numero;
 
-    public Sala(int predio, int andar, int numSala) {
+    public Sala(int predio, int numero) {
         this.predio = predio;
-        this.andar = andar;
-        this.numSala = numSala;
-
+        this.numero = numero;
         proximoCodigo++;
     }
 
@@ -28,20 +25,12 @@ public class Sala {
         this.predio = predio;
     }
 
-    public int getAndar() {
-        return this.andar;
+    public int getNumero() {
+        return this.numero;
     }
 
-    public void setAndar(int andar) {
-        this.andar = andar;
-    }
-
-    public int getSala() {
-        return this.numSala;
-    }
-
-    public void setSala(int numSala) {
-        this.numSala = numSala;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
 }

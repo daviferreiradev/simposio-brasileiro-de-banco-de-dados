@@ -24,12 +24,12 @@ public class ColecaoSessoesTecnicas {
         data = scanner.nextLine();
         System.out.print("Hora de Início da Sessão Técnica: ");
         horaInicio = scanner.nextLine();
-        System.out.print("Hora de Fim da Sessão Técnica:");
+        System.out.print("Hora de Fim da Sessão Técnica: ");
         horaFim = scanner.nextLine();
         System.out.print("ID do Local da Sessão Técnica: ");
         idSala = scanner.nextInt();
         Sala sala = ColecaoSalas.getInstance().buscarSalaPorID(idSala);
-        System.out.print("ID do Mediador da Sessão Técnica: ");
+        System.out.print("ID do Profissional/Mediador da Sessão Técnica: ");
         idMediador = scanner.nextInt();
         Professor mediador = ColecaoProfessores.getInstance().buscarProfessorPorID(idMediador);
 
@@ -38,7 +38,7 @@ public class ColecaoSessoesTecnicas {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante cadastrado com sucesso!\n");
+        System.out.println("Sessão Técnica cadastrada com sucesso!\n");
     }
 
     public void listarSessoesTecnicas() {
@@ -50,8 +50,8 @@ public class ColecaoSessoesTecnicas {
             System.out.println("Data: " + sessaoTecnica.getData());
             System.out.println("Hora de Início: " + sessaoTecnica.getHoraInicio());
             System.out.println("Hora de Fim: " + sessaoTecnica.getHoraFim());
-            System.out.println("Local: " + sessaoTecnica.getLocal());
-            System.out.println("Mediador: " + sessaoTecnica.getMediador());
+            System.out.println("Local: Prédio " + sessaoTecnica.getLocal().getPredio() + ", Sala " + sessaoTecnica.getLocal().getNumero());
+            System.out.println("Profissional/Mediador: " + sessaoTecnica.getMediador().getNome());
             System.out.println("");
         }
     }
@@ -101,6 +101,21 @@ public class ColecaoSessoesTecnicas {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante removido com sucesso!\n");
+        System.out.println("Sessão Técnica removida com sucesso!\n");
+    }
+
+    public void adicionarApresentacao() {
+        int codigo;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Código da Sessão Técnica: ");
+        codigo = scanner.nextInt();
+
+        for(SessaoTecnica sessaoTecnica : sessoesTecnicas) {
+            if(sessaoTecnica.getCodigo() == codigo) {
+                ColecaoApresentacoes.getInstance().adicionarApresentacao();
+                break;
+            }
+        }
     }
 }

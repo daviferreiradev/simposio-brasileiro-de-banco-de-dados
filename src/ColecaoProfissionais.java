@@ -63,7 +63,7 @@ public class ColecaoProfissionais {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante atualizado com sucesso!\n");
+        System.out.println("Profissional atualizado com sucesso!\n");
     }
 
     public void removerProfissional() {
@@ -82,7 +82,7 @@ public class ColecaoProfissionais {
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-        System.out.println("Estudante removido com sucesso!\n");
+        System.out.println("profissional removido com sucesso!\n");
     }
 
     public Profissional buscarProfissionalPorID(int codigo) {
