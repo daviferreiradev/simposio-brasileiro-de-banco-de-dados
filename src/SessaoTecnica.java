@@ -19,15 +19,52 @@ public class SessaoTecnica {
         this.apresentacoes = new ArrayList<Apresentacao>();
     }
 
-    public void adicionarApresentacao(Apresentacao apresentacao) {
-        this.apresentacoes.add(apresentacao);
+    public LocalDate getData() {
+        return this.data;
     }
 
-    public void removerApresentacao(Apresentacao apresentacao) {
-        this.apresentacoes.remove(apresentacao);
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
-    public ArrayList<Apresentacao> listarApresentacoes() {
+    public LocalTime getHoraInicio() {
+        return this.horaInicio;
+    }
+
+    public void setHoraInicio(LocalTime horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+
+    public LocalTime getHoraFim() {
+        return this.horaFim;
+    }
+
+    public void setHoraFim(LocalTime horaFim) {
+        this.horaFim = horaFim;
+    }
+
+    public Sala getLocal() {
+        return this.local;
+    }
+
+    public void setLocal(Sala local) {
+        this.local = local;
+    }
+
+    public Professor getMediador() {
+        return this.mediador;
+    }
+
+    public void setMediador(Professor mediador) {
+        this.mediador = mediador;
+    }
+
+    public ArrayList<Apresentacao> getApresentacoes() {
         return this.apresentacoes;
     }
+
+    public void setApresentacoes(ArrayList<Apresentacao> apresentacoes) {
+        this.apresentacoes = apresentacoes;
+    }
+
 }

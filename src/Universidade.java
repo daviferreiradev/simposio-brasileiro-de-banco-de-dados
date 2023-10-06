@@ -5,4 +5,13 @@ public class Universidade extends Instituicao {
         super(cnpj, nome);
         this.qtdCursos = qtdCursos;
     }
+
+    public int getQtdCursos() {
+        return this.qtdCursos;
+    }
+
+    public void setQtdCursos(int qtdCursos) {
+        this.qtdCursos = qtdCursos;
+    }
+
 }

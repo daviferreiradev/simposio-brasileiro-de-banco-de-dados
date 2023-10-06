@@ -1,12 +1,9 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
-
-        ColecaoEstudantes colecaoEstudantes = ColecaoEstudantes.getInstance();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -50,25 +47,25 @@ public class App {
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // CADASTRAR *****");
-                                    colecaoEstudantes.adicionarEstudante();
+                                    ColecaoEstudantes.getInstance().adicionarEstudante();
                                     break;
                                 case 2:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // LISTAR *****");
-                                    colecaoEstudantes.listarEstudantes();
+                                    ColecaoEstudantes.getInstance().listarEstudantes();
                                     break;
                                 case 3:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // ATUALIZAR *****");
-                                    colecaoEstudantes.atualizarEstudante();
+                                    ColecaoEstudantes.getInstance().atualizarEstudante();
                                     break;
                                 case 4:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
                                     System.out.flush();
                                     System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // REMOVER *****");
-                                    colecaoEstudantes.removerEstudante();
+                                    ColecaoEstudantes.getInstance().removerEstudante();
                                     break;
                                 default:
                                     System.out.print("\033[H\033[2J"); // Limpa o console
@@ -76,7 +73,6 @@ public class App {
                                     System.out.println("Opção inválida");
                                     break;
                             }
-
                             break;
                         case 2:
                             System.out.print("\033[H\033[2J"); // Limpa o console
@@ -117,5 +113,7 @@ public class App {
                     break;
             }
         }
+
+        scanner.close();
     }
 }

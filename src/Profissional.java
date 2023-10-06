@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-
 public class Profissional extends Pessoa {
     private MiniCurso miniCurso;
 
@@ -7,4 +5,13 @@ public class Profissional extends Pessoa {
         super(nome);
         this.miniCurso = miniCurso;
     }
+
+    public MiniCurso getMiniCurso() {
+        return this.miniCurso;
+    }
+
+    public void setMiniCurso(MiniCurso miniCurso) {
+        this.miniCurso = miniCurso;
+    }
+
 }

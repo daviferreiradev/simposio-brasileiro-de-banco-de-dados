@@ -8,4 +8,21 @@ public class Apresentacao {
         this.horaApresentacao = horaApresentacao;
         this.trabalho = trabalho;
     }
+
+    public LocalTime getHoraApresentacao() {
+        return this.horaApresentacao;
+    }
+
+    public void setHoraApresentacao(LocalTime horaApresentacao) {
+        this.horaApresentacao = horaApresentacao;
+    }
+
+    public Trabalho getTrabalho() {
+        return this.trabalho;
+    }
+
+    public void setTrabalho(Trabalho trabalho) {
+        this.trabalho = trabalho;
+    }
+
 }

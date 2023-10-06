@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-
 public class Professor extends Pessoa {
     private String disciplina;
 
@@ -7,4 +5,13 @@ public class Professor extends Pessoa {
         super(nome);
         this.disciplina = disciplina;
     }
+
+    public String getDisciplina() {
+        return this.disciplina;
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+
 }

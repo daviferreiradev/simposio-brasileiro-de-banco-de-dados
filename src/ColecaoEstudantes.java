@@ -25,8 +25,7 @@ public class ColecaoEstudantes {
         matricula = scanner.nextLine();
         System.out.print("Curso do Estudante: ");
         curso = scanner.nextLine();
-
-        // ColecaoEstudantes colecaoEstudantes = ColecaoEstudantes.getInstance();
+        
 
         Estudante estudante = new Estudante(nome, matricula, curso);
         estudantes.add(estudante);
@@ -37,6 +36,10 @@ public class ColecaoEstudantes {
     }
 
     public void listarEstudantes() {
+        if(estudantes.size() == 0) {
+            System.out.println("Não há estudantes cadastrados!\n");
+        }
+        
         for(Estudante estudante : estudantes) {
             System.out.println("Nome: " + estudante.getNome());
             System.out.println("Matrícula: " + estudante.getMatricula());
@@ -63,6 +66,7 @@ public class ColecaoEstudantes {
                 break;
             }
         }
+        
 
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
@@ -75,6 +79,7 @@ public class ColecaoEstudantes {
 
         System.out.print("Matrícula do Estudante: ");
         matricula = scanner.nextLine();
+
 
         for(Estudante estudante : estudantes) {
             if(estudante.getMatricula().equals(matricula)) {
