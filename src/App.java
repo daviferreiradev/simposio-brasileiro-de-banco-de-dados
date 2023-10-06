@@ -6,6 +6,8 @@ public class App {
         System.out.print("\033[H\033[2J"); // Limpa o console
         System.out.flush();
 
+        ColecaoEstudantes colecaoEstudantes = ColecaoEstudantes.getInstance();
+
         Scanner scanner = new Scanner(System.in);
 
         int choice = -1;
@@ -22,7 +24,9 @@ public class App {
 
             switch(choice) {
                 case 1:
-                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS / CADASTRAR *****");
+                    System.out.print("\033[H\033[2J"); // Limpa o console
+                    System.out.flush();
+                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA *****");
                     System.out.println("1 - Estudante");
                     System.out.println("2 - Professor");
                     System.out.println("3 - Profissional");
@@ -31,49 +35,84 @@ public class App {
                     choice = scanner.nextInt();
                     switch(choice) {
                         case 1:
-                            System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS / ESTUDANTE *****");
+                            System.out.print("\033[H\033[2J"); // Limpa o console
+                            System.out.flush();
+                            System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE *****");
                             System.out.println("1 - Cadastrar");
                             System.out.println("2 - Listar");
-                            System.out.println("3 - Remover");
+                            System.out.println("3 - Atualizar");
+                            System.out.println("4 - Remover");
+                            System.out.println("0 - Sair");
                             System.out.print("Digite a opcao desejada: ");
                             choice = scanner.nextInt();
                             switch(choice) {
                                 case 1:
-                                    Estudante.cadastrarEstudante();
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // CADASTRAR *****");
+                                    colecaoEstudantes.adicionarEstudante();
                                     break;
                                 case 2:
-                                    Estudante.listarEstudantes();
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // LISTAR *****");
+                                    colecaoEstudantes.listarEstudantes();
                                     break;
                                 case 3:
-                                    Estudante.removerEstudante();
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // ATUALIZAR *****");
+                                    colecaoEstudantes.atualizarEstudante();
+                                    break;
+                                case 4:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
+                                    System.out.println("***** SIMPOSIO BRASILEIRO DE  BANCO DE DADOS // PESSOA // ESTUDANTE // REMOVER *****");
+                                    colecaoEstudantes.removerEstudante();
                                     break;
                                 default:
+                                    System.out.print("\033[H\033[2J"); // Limpa o console
+                                    System.out.flush();
                                     System.out.println("Opção inválida");
                                     break;
                             }
 
                             break;
                         case 2:
+                            System.out.print("\033[H\033[2J"); // Limpa o console
+                            System.out.flush();
                             System.out.println("Cadastrar Professor");
                             break;
                         case 3:
+                            System.out.print("\033[H\033[2J"); // Limpa o console
+                            System.out.flush();
                             System.out.println("Cadastrar Profissional");
                             break;
                         default:
+                            System.out.print("\033[H\033[2J"); // Limpa o console
+                            System.out.flush();
                             System.out.println("Opção inválida");
                             break;
                     }
                     break;
                 case 2:
+                    System.out.print("\033[H\033[2J"); // Limpa o console
+                    System.out.flush();
                     System.out.println("Cadastrar Apresentação");
                     break;
                 case 3:
+                    System.out.print("\033[H\033[2J"); // Limpa o console
+                    System.out.flush();
                     System.out.println("Cadastrar Pessoa");
                     break;
                 case 4:
-                    System.out.println("Sair");
+                    System.out.print("\033[H\033[2J"); // Limpa o console
+                    System.out.flush();
+                    System.out.println("Saindo...");
                     break;
                 default:
+                    System.out.print("\033[H\033[2J"); // Limpa o console
+                    System.out.flush();
                     System.out.println("Opção inválida");
                     break;
             }
