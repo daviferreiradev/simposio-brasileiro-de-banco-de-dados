@@ -1,36 +1,47 @@
 public class Sala {
-    private int codigo;
-    private int idPredio;
-    private int capacidade;
+    private int proximoCodigo = 1;
+    private int predio;
+    private int andar;
+    private int numSala;
 
-    public Sala(int codigo, int idPredio, int capacidade) {
-        this.codigo = codigo;
-        this.idPredio = idPredio;
-        this.capacidade = capacidade;
+    public Sala(int predio, int andar, int numSala) {
+        this.predio = predio;
+        this.andar = andar;
+        this.numSala = numSala;
+
+        proximoCodigo++;
     }
 
     public int getCodigo() {
-        return this.codigo;
+        return this.proximoCodigo;
     }
 
     public void setCodigo(int codigo) {
-        this.codigo = codigo;
+        this.proximoCodigo = codigo;
     }
 
-    public int getIdPredio() {
-        return this.idPredio;
+    public int getPredio() {
+        return this.predio;
     }
 
-    public void setIdPredio(int idPredio) {
-        this.idPredio = idPredio;
+    public void setPredio(int predio) {
+        this.predio = predio;
     }
 
-    public int getCapacidade() {
-        return this.capacidade;
+    public int getAndar() {
+        return this.andar;
     }
 
-    public void setCapacidade(int capacidade) {
-        this.capacidade = capacidade;
+    public void setAndar(int andar) {
+        this.andar = andar;
+    }
+
+    public int getSala() {
+        return this.numSala;
+    }
+
+    public void setSala(int numSala) {
+        this.numSala = numSala;
     }
 
 }

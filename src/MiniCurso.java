@@ -1,17 +1,16 @@
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class MiniCurso {
+    private static int proximoID = 1;
     private String titulo;
-    private LocalDate data;
-    private LocalTime horaInicio;
-    private LocalTime horaFim;
+    private String data;
+    private String horaInicio;
+    private String horaFim;
     private Profissional profissional;
     private ArrayList<Pessoa> participantes;
     private Sala local;
 
-    public MiniCurso(String titulo, LocalDate data, LocalTime horaInicio, LocalTime horaFim, Profissional profissional, Sala local) {
+    public MiniCurso(String titulo, String data, String horaInicio, String horaFim, Profissional profissional, Sala local) {
         this.titulo = titulo;
         this.data = data;
         this.horaInicio = horaInicio;
@@ -19,6 +18,15 @@ public class MiniCurso {
         this.profissional = profissional;
         this.local = local;
         this.participantes = new ArrayList<Pessoa>();
+        proximoID++;
+    }
+
+    public static int getCodigo() {
+        return proximoID;
+    }
+
+    public static void setCodigo(int proximoID) {
+        MiniCurso.proximoID = proximoID;
     }
 
     public String getTitulo() {
@@ -29,27 +37,27 @@ public class MiniCurso {
         this.titulo = titulo;
     }
 
-    public LocalDate getData() {
+    public String getData() {
         return this.data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public LocalTime getHoraInicio() {
+    public String getHoraInicio() {
         return this.horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(String horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFim() {
+    public String getHoraFim() {
         return this.horaFim;
     }
 
-    public void setHoraFim(LocalTime horaFim) {
+    public void setHoraFim(String horaFim) {
         this.horaFim = horaFim;
     }
 

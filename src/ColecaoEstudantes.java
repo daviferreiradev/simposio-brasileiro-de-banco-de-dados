@@ -25,7 +25,6 @@ public class ColecaoEstudantes {
         matricula = scanner.nextLine();
         System.out.print("Curso do Estudante: ");
         curso = scanner.nextLine();
-        
 
         Estudante estudante = new Estudante(nome, matricula, curso);
         estudantes.add(estudante);

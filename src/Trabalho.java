@@ -1,26 +1,26 @@
 import java.util.ArrayList;
 
 public class Trabalho {
-    private int id;
+    private int proximoCod = 1;
     private String titulo;
     private String resumo;
     private Professor orientador;
     private ArrayList<Estudante> integrantes;
 
-    public Trabalho(int id, String titulo, String resumo, Professor orientador) {
-        this.id = id;
+    public Trabalho(String titulo, String resumo, Professor orientador) {
         this.titulo = titulo;
         this.resumo = resumo;
         this.orientador = orientador;
         this.integrantes = new ArrayList<Estudante>();
+        this.proximoCod++;
     }
 
-    public int getId() {
-        return this.id;
+    public int getCod() {
+        return this.proximoCod;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.proximoCod = id;
     }
 
     public String getTitulo() {

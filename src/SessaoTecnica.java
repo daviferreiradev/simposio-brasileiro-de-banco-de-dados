@@ -1,45 +1,51 @@
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-
 public class SessaoTecnica {
-    private LocalDate data;
-    private LocalTime horaInicio;
-    private LocalTime horaFim;
+    private static int proximoID = 1;
+
+    private int codigo;
+    private String data;
+    private String horaInicio;
+    private String horaFim;
     private Sala local;
     private Professor mediador;
-    private ArrayList<Apresentacao> apresentacoes;
 
-    public SessaoTecnica(LocalDate data, LocalTime horaInicio, LocalTime horaFim, Sala local, Professor mediador) {
+    public SessaoTecnica(String data, String horaInicio, String horaFim, Sala local, Professor mediador) {
         this.data = data;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
         this.local = local;
         this.mediador = mediador;
-        this.apresentacoes = new ArrayList<Apresentacao>();
+        proximoID++;
     }
 
-    public LocalDate getData() {
+    public int getCodigo() {
+        return this.codigo;
+    }
+
+    public void setCodigo() {
+        this.codigo = proximoID;
+    }
+
+    public String getData() {
         return this.data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public LocalTime getHoraInicio() {
+    public String getHoraInicio() {
         return this.horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(String horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFim() {
+    public String getHoraFim() {
         return this.horaFim;
     }
 
-    public void setHoraFim(LocalTime horaFim) {
+    public void setHoraFim(String horaFim) {
         this.horaFim = horaFim;
     }
 
@@ -58,13 +64,4 @@ public class SessaoTecnica {
     public void setMediador(Professor mediador) {
         this.mediador = mediador;
     }
-
-    public ArrayList<Apresentacao> getApresentacoes() {
-        return this.apresentacoes;
-    }
-
-    public void setApresentacoes(ArrayList<Apresentacao> apresentacoes) {
-        this.apresentacoes = apresentacoes;
-    }
-
 }

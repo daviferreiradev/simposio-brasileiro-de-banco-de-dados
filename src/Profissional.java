@@ -1,17 +1,26 @@
 public class Profissional extends Pessoa {
-    private MiniCurso miniCurso;
+    private int proximoCodigo = 1;
+    // private MiniCurso miniCurso;
 
-    public Profissional(String nome, MiniCurso miniCurso) {
+    public Profissional(String nome) {
         super(nome);
-        this.miniCurso = miniCurso;
+        proximoCodigo++;
     }
 
-    public MiniCurso getMiniCurso() {
-        return this.miniCurso;
+    public int getCodigo() {
+        return this.proximoCodigo;
     }
 
-    public void setMiniCurso(MiniCurso miniCurso) {
-        this.miniCurso = miniCurso;
+    public void setCodigo(int codigo) {
+        this.proximoCodigo = codigo;
     }
+
+    // public MiniCurso getMiniCurso() {
+    //     return this.miniCurso;
+    // }
+
+    // public void setMiniCurso(MiniCurso miniCurso) {
+    //     this.miniCurso = miniCurso;
+    // }
 
 }
